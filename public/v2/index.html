@@ -363,8 +363,11 @@ size();window.addEventListener('resize',size);
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var t0=performance.now(),last=-1,vis=true;
 if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting;}).observe(box);}
-box.addEventListener('mouseenter',function(){if(!reduce&&(performance.now()-t0)/1000>3.5)t0=performance.now();});
-function frame(now){var t=reduce?4:(now-t0)/1000;if(vis){if(t<3.2||last<3.2||reduce||!SIL){mask(t);}last=t;gl.uniform1f(uT,reduce?0:t);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}if(!reduce)requestAnimationFrame(frame);}
+
+function frame(now){var e=(now-t0)/1000,P=8,c=e%P;
+ var t=reduce?4:(c<5.5?c:Math.max(0,2.6-(c-5.5)*1.6));
+ if(vis){mask(t);gl.uniform1f(uT,reduce?0:e);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}
+ if(!reduce)requestAnimationFrame(frame);}
 requestAnimationFrame(frame);
 })();
 </script></body></html>
