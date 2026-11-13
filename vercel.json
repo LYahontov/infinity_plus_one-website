@@ -5,10 +5,36 @@
   "installCommand": "",
   "outputDirectory": "public",
   "redirects": [
-    { "source": "/v2", "destination": "/", "permanent": true },
-    { "source": "/v2/index.html", "destination": "/", "permanent": true }
+    {
+      "source": "/v2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v2/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v1/:path*",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/v2/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+    {
+      "source": "/v2/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
   ]
 }
