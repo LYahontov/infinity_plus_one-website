@@ -90,7 +90,7 @@ h2{font-size:48px;line-height:1.05;letter-spacing:-.025em;font-weight:600;max-wi
 .work{gap:28px!important}
 a.wc{background:#fff;border-radius:32px;padding:20px 20px 32px;gap:14px}
 .work a.wc:nth-child(3n+2){background:#E4E6EA}
-.work a.wc:nth-child(3n+3){background:#fff;outline:2px solid #0E0E0E;outline-offset:-2px}
+.work a.wc:nth-child(3n+3){background:#fff}
 .wc .wv{border:0!important;border-radius:20px;overflow:hidden;background:#fff;padding:28px!important}
 .wc .wv[style*="padding:0"]{padding:0!important}
 .wc h3{font-size:22px} .wc .big{font-size:36px!important}
@@ -107,7 +107,9 @@ h1{font-size:68px} .ph1{font-size:60px}
 .ft{border-top:0} .ft a{color:inherit;text-decoration:none}
 button.chip{background:transparent;cursor:pointer;color:#0E0E0E;font-family:'IBM Plex Mono',monospace} button.chip.on{background:#0E0E0E;color:#fff} .wc[hidden]{display:none!important} .page[hidden]{display:none!important} a.chip{text-decoration:none} .chip:hover{border-color:#C8345D}
 .nv a.cur{text-decoration:underline;text-decoration-color:#C8345D;text-decoration-thickness:3px;text-underline-offset:6px}
-.wc{transition:transform .15s} a.wc:hover{transform:translateY(-4px)} a.wc:hover h3{text-decoration:underline;text-decoration-color:#75FBFD;text-decoration-thickness:3px}
+.wc{transition:transform .15s,outline-color .15s}
+ a.wc{outline:2px solid transparent;outline-offset:-2px}
+ a.wc:hover,a.wc:focus-visible{outline-color:#0E0E0E} a.wc:hover{transform:translateY(-4px)} a.wc:hover h3{text-decoration:underline;text-decoration-color:#75FBFD;text-decoration-thickness:3px}
 .page{animation:fd .25s ease-out} @keyframes fd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.page{animation:none}}
 @media (max-width:900px){.in{padding:0 16px} .hero,.intro,.form,.four,.faq div{grid-template-columns:1fr!important} .paths,.work,.steps,.why,.team,.sym,.role,.strip,.nums,.tl{grid-template-columns:1fr 1fr!important} h1{font-size:44px} .ph1{font-size:40px} h2{font-size:32px} .nv a:not(.cta){display:none} .hd .cta{padding:10px 14px;font-size:14px} .lg span{display:none} .pc{border-right:0!important;border-bottom:1px solid #DADAD5} .endb{padding:32px 20px} .endb h2{font-size:30px} .st+.st,.nums div+div,.strip div+div,.role div+div{border-left:0;padding-left:0}}
